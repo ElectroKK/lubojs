@@ -10,7 +10,7 @@ module.exports = async (Discord, client, message) => {
 
 let profileData;
 try{
-    profileData = await profileModel.findOne({ userID: message.author.id});
+    
     if(!profileData){
         let profile = await profileModel.create({
             userID: message.author.id,
@@ -20,6 +20,7 @@ try{
         });
         profile.save();
     }
+    profileData = await profileModel.findOne({ userID: message.author.id});
 }catch(err){
     console.log(err);
 }    
@@ -93,7 +94,29 @@ try{
         if(current_time < expiration_time){
             const time_left = (expiration_time - current_time) / 1000;
 
-            return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name}`);
+            const cooldownEmbed = new Discord.MessageEmbed()
+            .setColor("RED")
+            .setDescription("")
+            .setTitle("Slow Down!")
+
+        if (time_left.toFixed(1) >= 3600) {
+            let hour = (time_left / 3600).toFixed(1);
+            cooldownEmbed.setDescription(`Sorry your on cooldown for ${hour} more hour[s]!`)
+        } else if (time_left.toFixed(1) >= 60) {
+            let minute = (time_left / 60).toFixed(1);
+            cooldownEmbed.setDescription(`Sorry your on cooldown for ${minute} more minute[s]!`)
+        } else {
+
+            let seconds = time_left.toFixed(1);
+            cooldownEmbed.setDescription(`Sorry your on cooldown for ${seconds} more second[s]!`)
+        }
+
+
+        return message.channel.send(cooldownEmbed).then(msg => {
+            msg.delete({
+                timeout: 5000
+            })
+        })
         }
     }
 
@@ -102,7 +125,7 @@ try{
     
 
     try {
-      command.execute(client, message, args, cmd, Discord, profileData  );
+      command.execute(client, message, args, cmd, Discord, profileData);
     } catch (err) {
       message.reply("There was an error trying to execute this command!");
       console.log(err);
