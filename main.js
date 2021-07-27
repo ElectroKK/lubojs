@@ -1,3 +1,4 @@
+const keepAlive = require('./server.js');
 require('dotenv').config();
 
 const Discord = require('discord.js');
@@ -31,5 +32,7 @@ mongoose
 .catch((err) =>{
     console.log(err);
 });
+
+keepAlive();
 
 client.login(process.env.token);
