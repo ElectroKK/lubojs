@@ -39,4 +39,4 @@ mongoose
     console.log(err);
 });
 
-client.login('ODYxNzI0MDI3MjI2ODE2NTUz.YON9Cg.u7G6KBZgwSaIko8_RkFRbxOFEJM');
+client.login(process.env.token);
