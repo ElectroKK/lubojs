@@ -9,13 +9,6 @@ const client = new Discord.Client();
 const prefix = ['plz ', 'Plz '];
 
 
-client.on('guildMemberAdd', guildMember =>{
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Lubo Community' );
-
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('866471415603134465').send(`**Welcome to Lubo's Official Server, <@${guildMember.user.id}>! Try running .help in a bot channel!**`);
-});
-
 const fs = require('fs');
 
 client.commands = new Discord.Collection();
@@ -39,4 +32,4 @@ mongoose
     console.log(err);
 });
 
-client.login('ODYxNzI0MDI3MjI2ODE2NTUz.YON9Cg.u7G6KBZgwSaIko8_RkFRbxOFEJM');
+client.login(process.env.token);
