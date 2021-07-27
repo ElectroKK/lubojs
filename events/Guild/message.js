@@ -10,21 +10,21 @@ module.exports = async (Discord, client, message) => {
 
 let profileData;
 try{
-    
+  profileData = await profileModel.findOne({ userID: message.author.id});
     if(!profileData){
         let profile = await profileModel.create({
             userID: message.author.id,
             serverID: message.guild.id,
-            Lubi: 1000,
+            lubi: 1000,
             bank: 0,
         });
         profile.save();
+        profileData = await profileModel.findOne({ userID: message.author.id});
     }
-    profileData = await profileModel.findOne({ userID: message.author.id});
+    
 }catch(err){
     console.log(err);
 }    
-
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
