@@ -30,6 +30,8 @@ try{
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
+    if(!command) return;
+
     const validPermissions = [
         "CREATE_INSTANT_INVITE",
         "KICK_MEMBERS",
@@ -127,7 +129,7 @@ try{
     try {
       command.execute(client, message, args, cmd, Discord, profileData);
     } catch (err) {
-      message.reply("There was an error trying to execute this command!");
+      message.reply("There was an error trying to execute this command! If you keep getting this message, please report it in the Official Lubo Server or use the command `.reportbug`");
       console.log(err);
     }
 };

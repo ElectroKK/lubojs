@@ -9,7 +9,7 @@ module.exports = {
         .setTitle(':moneybag: Help Currency')
         .setDescription("The official name of Lubo's currency is *Lubi* pronounced *Loo·bye*. You will more commonly see Lubi in the form of ℒ. \nYour wallet will have 1000 coins to start in order for you to start playing around. \nHere are the commands that you can try to get started!: \n`.bal` to view balance \n`.beg` to beg for some coins \n`.search` to find a few coins \n`.daily` to claim daily rewards \n`.work` to earn a few extra coins  \n`.with`/`.dep` to deposit and withdraw coins from bank")
         .addFields()
-        .setFooter('Stay tuned for more commands coming soon!');
+        .setFooter('To purchase additional Lubi, DM ElectroKK#1234');
 
         message.channel.send(newEmbed);
     }

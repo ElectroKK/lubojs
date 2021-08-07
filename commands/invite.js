@@ -8,7 +8,7 @@ module.exports = {
         .setColor('#304281')
         .setTitle('Click here to invite Lubo to a server!')
         .setURL('https://discord.com/oauth2/authorize?client_id=861724027226816553&scope=bot&permissions=8589934591')
-        .setDescription('**Click the words above to add Lubo to a server!** \nTo join the official Lubo Discord Server, click the link below! \nhttps://discord.gg/CvADbN3VrB')
+        .setDescription('**Click the words above to add Lubo to a server!** \nTo join the official Lubo Discord Server, click the link below! \nhttps://discord.gg/NKBjkuJKqd')
         .addFields()
         .setFooter('Share this bot with others so we can grow!');
 

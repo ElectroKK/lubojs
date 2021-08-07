@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         $inc: {
-          Lubi: randomNumber,
+          lubi: randomNumber,
         },
       }
     );

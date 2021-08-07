@@ -44,7 +44,7 @@ module.exports = {
                 },
                 {
                     $inc: {
-                        coins: earnings,
+                        lubi: earnings,
                     },
                 }
             );

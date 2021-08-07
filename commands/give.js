@@ -22,7 +22,7 @@ module.exports = {
             },
             {
                 $inc: {
-                    Lubi: amount,
+                    lubi: amount,
                 },
             }
             );

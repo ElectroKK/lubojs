@@ -8,14 +8,14 @@ module.exports = {
         const amount = args[0];
         if(amount % 1 != 0 || amount <= 0) return message.channel.send("Deposit amount must be a whole number");
         try{
-            if(amount > profileData.Lubi) return message.channel.send(`You don't have that amount of Lubi to deposit`);
+            if(amount > profileData.lubi) return message.channel.send(`You don't have that amount of Lubi to deposit`);
             await profileModel.findOneAndUpdate({
                 userID: message.author.id
 
             },
             {
               $inc: {
-                Lubi: -amount,
+                lubi: -amount,
                 bank: amount,
             
             },
