@@ -8,9 +8,9 @@
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#3e9c35')    
         .setTitle('Balance')
-        .setDescription(`:money_with_wings: **Wallet:** ℒ ${profileData.lubi} \n:bank: **Bank:** ℒ ${profileData.bank}`)
+        .setDescription(`:money_with_wings: **Wallet:** ℒ ${profileData.lubi}\n:bank: **Bank:** ℒ ${profileData.bank}`)
         .addFields()
-        .setFooter('Try running -beg to get some extra Lubi!');
+        .setFooter('Try running .beg to get some extra Lubi!');
 
         message.channel.send(newEmbed); 
     }

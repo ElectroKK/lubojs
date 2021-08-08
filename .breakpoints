@@ -1,0 +1,28 @@
+{
+  "files": {
+    "commands/allcmd.js": [
+      {
+        "id": "99ab2b57-4985-4c7d-895d-7a072ff1da72",
+        "line": 12,
+        "version": 783,
+        "index": 485
+      }
+    ],
+    "events/guild/guildMemberAdd.js": [
+      {
+        "id": "c1a4027e-507a-4656-a225-52b7f0c566d6",
+        "line": 8,
+        "version": 10,
+        "index": 250
+      }
+    ],
+    "planning": [
+      {
+        "id": "e8785b34-79f7-4568-9f45-f8c17b5d2adc",
+        "line": 1,
+        "version": 540,
+        "index": 0
+      }
+    ]
+  }
+}

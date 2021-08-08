@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'], //We are using aliases to run the skip and stop command follow this tutorial if lost: https://www.youtube.com/watch?v=QBUJ3cdofqc
+    aliases: ['skip', 'stop', 'pause', 'unpause'], //We are using aliases to run the skip and stop command follow this tutorial if lost: https://www.youtube.com/watch?v=QBUJ3cdofqc
     cooldown: 0,
     description: 'Advanced music bot',
     async execute(client, message, args, cmd, Discord, profileData){
@@ -67,7 +67,7 @@ module.exports = {
                     video_player(message.guild, queue_constructor.songs[0]);
                 } catch (err) {
                     queue.delete(message.guild.id);
-                    message.channel.send('There was an error connecting!');
+                    message.channel.send('There was an error connecting! If you keep getting this error, it might be because I dont have the perms to join this channel!');
                     throw err;
                 }
             } else{
@@ -78,6 +78,18 @@ module.exports = {
 
         else if(cmd === 'skip') skip_song(message, server_queue);
         else if(cmd === 'stop') stop_song(message, server_queue);
+        else if(cmd === "pause"){
+  if(server_queue.connection.dispatcher.paused) return message.channel.send("Song is already paused!");//Checks if the song is already paused.
+  server_queue.connection.dispatcher.pause();//If the song isn't paused this will pause it.
+  message.channel.send("Paused the song!");//Sends a message to the channel the command was used in after it pauses.
+         }
+
+//Unpause command
+else if(cmd === "unpause"){
+  if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");//Checks if the song isn't paused.
+  server_queue.connection.dispatcher.resume();//If the song is paused this will unpause it.
+  message.channel.send("Unpaused the song!");//Sends a message to the channel the command was used in after it unpauses.
+}
     }
     
 }
@@ -112,6 +124,8 @@ const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
+
+    //console.log(server_queue.connection.dispatcher)
 }
 
 

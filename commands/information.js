@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#C0C0C0')
         .setTitle(':book: Help Information')
-        .setDescription("If you are new to using Lubo and would like to know some more information, feel free to run some of the following commands: \n`.botinfo` Extra information about Lubo \n`.invite` This command will allow you to add Lubo to a server and join the Official Lubo Server!")
+        .setDescription("**Bot Links:**\nAdd Lubo:\nhttps://tinyurl.com/AddLubo\nOfficial Website\n*Coming Soon*\nVote Lubo: \nhttps://tinyurl.com/VoteLubo\nOfficial Lubo Server:\nhttps://discord.gg/NKBjkuJKqd\nInfo Commands: \n`.reportbug` Report a bug\n`.botinfo` Extra information about Lubo \n`.invite` This command will allow you to add Lubo to a server and join the Official Lubo Server! \n`.vote` Vote for Lubo! \n`.speed` tells you current response time of Lubo")
         .addFields()
         .setFooter('Share this bot so we can grow!');
 

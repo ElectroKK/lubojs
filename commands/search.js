@@ -36,7 +36,7 @@ module.exports = {
 
 
         collector.on('collect', async (m) => {
-            message.channel.send(`You found ${earnings} coins!`);
+            message.channel.send(`You found ${earnings} Lubi!`);
 
             await profileModel.findOneAndUpdate(
                 {
@@ -57,6 +57,6 @@ module.exports = {
         });
 
 
-        message.channel.send(`<@${message.author.id}> Which location would you like to search?\n Type the location in this channel\n \`${chosenLocations.join('` `')}\``);
+        message.channel.send(`<@${message.author.id}> Which location would you like to search?\n Type 1 of the location shown below in this channel\n \`${chosenLocations.join('` `')}\``);
     }
-}
+} 

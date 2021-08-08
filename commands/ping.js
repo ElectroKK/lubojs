@@ -1,15 +1,16 @@
 module.exports = {
   name: "ping",
+  aliases: ['speed', 'test'],
   description: "Gets the ping of the bot",
   cooldown: 5, // Optional
-  async execute(message, args, cmd, client, Discord, prefix, profileData, profileModel, serverData, serverModel) {
+  async execute(client, message, args, cmd, Discord, profileData) {
 
     const timeTaken = Date.now() - message.createdTimestamp;
-    const pingEmbed = new MessageEmbed()
+    const newEmbed = new Discord.MessageEmbed()
     .setColor('#CCCC00')
     .setDescription(`🏓 Current Ping: ${timeTaken}ms.`);
 
-    message.channel.send(pingEmbed);
+    message.channel.send(newEmbed);
 
   }
 }
