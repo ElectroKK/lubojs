@@ -33,6 +33,6 @@ mongoose
     console.log(err);
 });
 
-keepAlive();
 
+keepAlive();
 client.login(process.env.token);

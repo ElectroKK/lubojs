@@ -23,6 +23,16 @@ module.exports = {
             "mom",
             "dad",
             "gutters",
+            "air",
+            "basement",
+            "attic",
+            "bank",
+            "dumpster",
+            "fridge",
+            "mailbox",
+            "purse",
+            "sewer",
+            "glovebox",
             "computer"
         ];
 

@@ -4,7 +4,7 @@ module.exports = {
     cooldown: 21600,
     description: 'let users report bugs',
     async execute(client, message, args, cmd, Discord, profileData){
-        //the channel you want the bug-reports to be send to
+        //the channel you want the bug-reports to be send to (Kaleb, send to private Testing)
         const channel = client.channels.cache.get('862097949315694624')
 
          //look if there is a bug specified

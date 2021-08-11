@@ -9,8 +9,5 @@ module.exports = async(client, Discord, member) => {
     });
     profile.save();
 
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Lubo Community' );
-
-    guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('866471415603134465').send(`**Welcome to Lubo's Official Server, <@${guildMember.user.id}>! Try running .help in a bot channel!**`);
+  
 };

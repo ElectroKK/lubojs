@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9FE2BF')
         .setTitle('😜 Help Fun')
-        .setDescription("Fun commands are not necessaryly for a specific purpose, you can just have fun with them!\n`.8ball (Y or N question)` Random answer generator\n`.avatar` Send a users (or your) avatar")
+        .setDescription("Fun commands are not necessaryly for a specific purpose, you can just have fun with them!\n`.8ball`, `.avatar` ")
         .addFields()
         .setFooter('Please follow server rules when using fun commands!');
 

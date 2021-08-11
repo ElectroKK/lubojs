@@ -88,7 +88,7 @@ module.exports = {
 else if(cmd === "unpause"){
   if(!server_queue.connection.dispatcher.paused) return message.channel.send("Song isn't paused!");//Checks if the song isn't paused.
   server_queue.connection.dispatcher.resume();//If the song is paused this will unpause it.
-  message.channel.send("Unpaused the song!");//Sends a message to the channel the command was used in after it unpauses.
+  message.channel.send("Unpaused the song! *if song isn't playing, try running `.pause`, then re-run `.unpause`");//Sends a message to the channel the command was used in after it unpauses.
 }
     }
     

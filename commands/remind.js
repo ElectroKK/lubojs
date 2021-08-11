@@ -5,6 +5,7 @@ module.exports = {
         content:  "Helps remind you something",
     },
     async execute(client, message, args, cmd, Discord, profileData) {
+      const ms = require('ms');
         let time = args[0];
         let user = message.author
         let reminder = args.splice(1).join(' ')
