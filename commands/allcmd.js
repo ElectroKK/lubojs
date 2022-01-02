@@ -9,12 +9,12 @@ module.exports = {
         .setTitle('ALL Lubo Commands')
         .setDescription('Here is a list of all Lubo commands you can use!')
         .addFields(
-          {name: ':moneybag: Currency Commands', value: '`.balance`, `.beg`, `.search`, `.daily`, `.work`, `.guessnumber`, `.withdraw`, `.deposit`'},
+          {name: ':moneybag: Currency Commands', value: '`.balance`, `.beg`, `.search`, `.daily`, `.work`, `.guessnumber`, `.scramble`, `.withdraw`, `.deposit`'},
           {name: ':notes: Music Commands', value: '`.play`, `.stop`, `.skip`, `.pause`, `.unpause`,`.spotifysearch`'},
           {name: ':police_officer: Moderator Commands', value: '`.clear`, `.kick`, `.ban`, `.embed`, `.slowmode`, `.poll`'},
-          {name: ':stuck_out_tongue_winking_eye: Fun Commands', value: '`.8ball`, `.avatar`, `.rps`'},
-          {name: ':bulb: Utility Commands', value: '`.remind`, `.weather`, `.userinfo`, `.serverinfo`,'},
-          {name: ':book: Information Commands', value: '`.reportbug`, `.botinfo`, `.invite`, `.vote`, `.speed`, `.stats`'}
+          {name: ':stuck_out_tongue_winking_eye: Fun Commands', value: '`.8ball`, `.avatar`, `.rps`, `.gtn`, `.tictactoe`, `.coinflip`, `.emojify`'},
+          {name: ':bulb: Utility Commands', value: '`.remind`, `.weather`, `.userinfo`, `.serverinfo`, `.ytsearch`, `.calculate`'},
+          {name: ':book: Information Commands', value: '`.reportbug`, `.botinfo`, `.rules` `.invite`, `.vote`, `.speed`, `.stats`'}
           
 
 

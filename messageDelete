@@ -1,0 +1,12 @@
+// const {MessageEmbed} = require('discord.js')
+// module.exports = {
+//     async execute(client, message, args, cmd, Discord, profileData) {
+//   let embed = new MessageEmbed()
+//   .setTitle('New Message Deleted!')
+//   .setDescription(`The user ${message.author.tag} has deleted a message in <#${message.channel.id}>`)
+//   .addField(`Content`,message.content,true)
+//  let channel = message.guild.channels.cache.find(ch=>ch.name==="kalebs-inspiration-channel")
+//  if(!channel)return;
+//  channel.send(embed)
+// }
+// }

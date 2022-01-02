@@ -7,6 +7,7 @@ const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
     const prefix = ['.'];
     if(!message.content.startsWith(prefix) || message.author.bot) return;
+    
 
 let profileData;
 try{

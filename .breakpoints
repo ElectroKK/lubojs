@@ -4,7 +4,7 @@
       {
         "id": "99ab2b57-4985-4c7d-895d-7a072ff1da72",
         "line": 12,
-        "version": 847,
+        "version": 983,
         "index": 485
       }
     ],
@@ -14,6 +14,14 @@
         "line": 8,
         "version": 13,
         "index": 250
+      }
+    ],
+    "events/guild/messageDelete.js": [
+      {
+        "id": "08d1fc00-f0db-4fda-b0d9-a21063117f02",
+        "line": 12,
+        "version": 412,
+        "index": 490
       }
     ],
     "planning": [

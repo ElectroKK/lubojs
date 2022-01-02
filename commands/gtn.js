@@ -1,11 +1,8 @@
 const { MessageCollector, MessageEmbed } = require('discord.js');
-const mongoose = require('mongoose')
-const profileModel = require("../models/profileSchema");
-
 module.exports = {
-    name: 'guessthenumber',
-    aliases: ['guessnumber', 'gtngame'],
-    cooldown: 2700,
+    name: 'gtn',
+    aliases: [],
+    cooldown: 59,
     description: 'Play guess the number',
     
     async execute(client, message, args, cmd, Discord, profileData) {
@@ -13,9 +10,9 @@ module.exports = {
         let finished = false;
 
         message.channel.send(
-            new Discord.MessageEmbed()
-            .setTitle(`Guess The Number To Earn Lubi!`)
-            .setDescription(`Guess a number (1-10000) for Lubi! **You have 1 minute starting NOW**`)
+            new MessageEmbed()
+            .setTitle(`Guess The Number Game`)
+            .setDescription(`Guess a number (1-10000). You have **1 minute starting NOW** (No Lubi Earnings)`)
             .setColor('RANDOM')
             .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
@@ -44,36 +41,15 @@ module.exports = {
                     new MessageEmbed()
                     .setTitle(`Correct`)
                     .setDescription(`${parseInt(msg)} is correct!`)
-                    .setFooter(`It took you ${tries} times to get it`)
+                    .setFooter(`It took you ${tries} times to get it! \nTo play a "Guess the Number" Game for lubi, use .guessnumber.`)
                     .setTimestamp()
                     .setColor('GREEN')
-                ).then(async() => {
-                  const randomNumber = Math.floor(Math.random() * 3500) + 3000;
-    const response = await profileModel.findOneAndUpdate(
-      {
-        userID: message.author.id,
-      },
-      {
-        $inc: {
-          lubi: randomNumber,
-        },
-      }
-    );
-
-    message.channel.send(
-        new MessageEmbed()
-        .setTitle(`Game Rewards`)
-        .setDescription(`You earned ℒ ${randomNumber} for guessing the correct number!`)
-        .setFooter(`There is a 45m cooldown on this command. To play a "guess the number" game for fun, use .gtn`)
-        .setTimestamp()
-        .setColor('GREEN')
-    )
-                })
+                )
             }
         });
         
         collector.on('end', async(collected) => {
-            if(finished == false) return message.reply(`Uh oh! You time ran out! **The number was ${number}.** Try again in 45m for a chance to win Lubi! *To play a "guess the number" game for fun, use .gtn*`);
+            if(finished == false) return message.reply(`You timed out! **The number was ${number}.** To play this game for lubi, use .guessnumber.`);
         });
     }
 }
